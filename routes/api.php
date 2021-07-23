@@ -21,3 +21,10 @@ Route::prefix('category')->group(function () {
     Route::put('{category_id}', [CategoryController::class, 'update']);
     Route::delete('{category_id}', [CategoryController::class, 'destroy']);
 });
+
+Route::prefix('author')->group(function(){
+    Route::get('', [CategoryController::class, 'index']);
+    Route::post('', [CategoryController::class, 'store']);
+    Route::put('{author_id}', [CategoryController::class, 'update']);
+    Route::delete('{author_id}', [CategoryController::class, 'destroy']);
+});
