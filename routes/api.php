@@ -19,5 +19,5 @@ Route::prefix('category')->group(function () {
     Route::get('', [CategoryController::class, 'index']);
     Route::post('', [CategoryController::class, 'store']);
     Route::put('{category_id}', [CategoryController::class, 'update']);
-    Route::get('{category_id}', [CategoryController::class, 'destroy']);
+    Route::delete('{category_id}', [CategoryController::class, 'destroy']);
 });
