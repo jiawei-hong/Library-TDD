@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('category')->group(function () {
+    Route::get('', [CategoryController::class, 'index']);
+    Route::post('', [CategoryController::class, 'store']);
+    Route::put('{category_id}', [CategoryController::class, 'update']);
+    Route::get('{category_id}', [CategoryController::class, 'destroy']);
 });
