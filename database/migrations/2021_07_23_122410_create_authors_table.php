@@ -15,7 +15,8 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->timestamps();
         });
     }
@@ -26,7 +27,7 @@ class CreateAuthorsTable extends Migration
      * @return void
      */
     public function down()
-        Schema::dropIfExists('authors');
     {
+        Schema::dropIfExists('authors');
     }
 }

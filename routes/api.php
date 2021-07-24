@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ Route::prefix('category')->group(function () {
 });
 
 Route::prefix('author')->group(function(){
-    Route::get('', [CategoryController::class, 'index']);
-    Route::post('', [CategoryController::class, 'store']);
-    Route::put('{author_id}', [CategoryController::class, 'update']);
-    Route::delete('{author_id}', [CategoryController::class, 'destroy']);
+    Route::get('', [AuthorController::class, 'index']);
+    Route::post('', [AuthorController::class, 'store']);
+    Route::put('{author_id}', [AuthorController::class, 'update']);
+    Route::delete('{author_id}', [AuthorController::class, 'destroy']);
 });
